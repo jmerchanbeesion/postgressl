@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "user",
+        "type": "User"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyDataBase.TblUsers, ^user)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "user",
+        "in": "Body",
+        "name": "body",
+        "remarks": "User to be created."
+      }
+    ],
+    "path": "/user",
+    "remarks": "Allows to create a new User.",
+    "responses": []
+  }
+}

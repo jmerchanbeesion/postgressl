@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "systemName": "MyWeb",
+      "action": "build"
+    },
+    {
+      "systemName": "MyMicroservice",
+      "action": "build"
+    },
+    {
+      "systemName": "MyDataBase",
+      "action": "connect",
+      "connectionData": {
+        "providerName": "Postgres",
+        "sslPemPath": "/home/josem/Documents/Dockers/Certs/us-east-1-bundle.pem",
+        "host": "database-1-instance-1.czafwjy0qvkl.us-east-1.rds.amazonaws.com",
+        "user": "scim",
+        "password": "scim",
+        "database": "BeeDevRDS",
+        "ssl": true
+      }
+    }
+  ]
+}

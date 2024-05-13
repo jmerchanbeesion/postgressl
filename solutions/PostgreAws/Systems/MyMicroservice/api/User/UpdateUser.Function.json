@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "user",
+        "type": "User"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyDataBase.TblUsers, ^user, id == ^id)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "id",
+        "in": "Path",
+        "name": "id",
+        "remarks": "Id."
+      },
+      {
+        "bind": "user",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New User information to be updated."
+      }
+    ],
+    "path": "/user/{id}",
+    "remarks": "Allows to update an existing User.",
+    "responses": []
+  }
+}

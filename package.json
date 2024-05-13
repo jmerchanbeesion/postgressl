@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "blazedpath": {
+    "version": "3.26.3"
+  },
+  "publishConfig": {
+    "registry": "https://blz-nexus.beesion.team/repository/bee-npm",
+    "username": "cmp-beesion",
+    "password": "$b6231fE$0.3!6341F811"
+  },
+  "dependencies": {}
+}

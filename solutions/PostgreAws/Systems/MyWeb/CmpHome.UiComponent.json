@@ -1,0 +1,127 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "args",
+            "type": "ArgsLoadRecords"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "args1"
+          },
+          {
+            "command": "Set",
+            "expression": "Map(FindFirst(^args.filters, key == \"f1\"), value)",
+            "variableName": "args1.id"
+          },
+          {
+            "command": "Return",
+            "expression": "MyMicroservice.ListUsers(^args1)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "args1",
+            "type": "MyMicroservice.ArgsListUsers"
+          }
+        ]
+      },
+      "name": "grid1_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Refresh",
+            "widgetName": "grid1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "[]",
+            "variableName": "grid1FilterConfigs"
+          },
+          {
+            "command": "Push",
+            "expressionItem": "{ key: \"f1\", label: \"Id\", type: \"text\" }",
+            "variableNameList": "grid1FilterConfigs"
+          },
+          {
+            "command": "SetFilterConfigs",
+            "expression": "^grid1FilterConfigs",
+            "widgetName": "grid1"
+          },
+          {
+            "command": "Refresh",
+            "widgetName": "grid1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "grid1FilterConfigs",
+            "type": "list(FilterConfig)"
+          }
+        ]
+      },
+      "name": "grid1_init"
+    }
+  ],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "columns": [
+          {
+            "align": "left",
+            "bindText": "id",
+            "header": "Id",
+            "size": 1
+          },
+          {
+            "align": "left",
+            "bindText": "displayName",
+            "header": "Display Name",
+            "size": 1
+          },
+          {
+            "align": "left",
+            "bindText": "emails",
+            "header": "Emails",
+            "size": 1
+          }
+        ],
+        "name": "grid1",
+        "pageSize": null,
+        "typeName": "MyMicroservice.User",
+        "widget": "Grid",
+        "withFiltering": true,
+        "withPaging": false
+      }
+    ],
+    "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-main",
+    "horizontalSeparation": "large",
+    "layout": "container",
+    "verticalSeparation": "large"
+  },
+  "routing": {
+    "path": "/home"
+  },
+  "unused": []
+}
