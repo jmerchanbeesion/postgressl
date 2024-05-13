@@ -9,7 +9,7 @@
     "statements": [
       {
         "command": "Return",
-        "expression": "RdsDelete(MyDataBase.TblUsers, id == ^id)"
+        "expression": "RdsDelete(MyDataBase.TblAuditRecords, id == ^id)"
       }
     ],
     "typeReturn": "any",
@@ -25,8 +25,8 @@
         "remarks": "Id."
       }
     ],
-    "path": "/user/{id}",
-    "remarks": "Allows to delete a User.",
+    "path": "/audit-record/{id}",
+    "remarks": "Allows to delete a AuditRecord.",
     "responses": []
   }
 }

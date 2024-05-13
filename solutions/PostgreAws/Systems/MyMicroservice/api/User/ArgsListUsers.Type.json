@@ -1,3 +1,0 @@
-{
-  "type": "obj(id: string, externalId: string, userName: string, offset: integer, limit: integer)"
-}

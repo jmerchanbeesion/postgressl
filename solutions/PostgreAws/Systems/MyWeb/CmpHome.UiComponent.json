@@ -20,15 +20,25 @@
             "variableName": "args1.id"
           },
           {
+            "command": "Set",
+            "expression": "^args.offset",
+            "variableName": "args1.offset"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.limit",
+            "variableName": "args1.limit"
+          },
+          {
             "command": "Return",
-            "expression": "MyMicroservice.ListUsers(^args1)"
+            "expression": "MyMicroservice.ListAuditRecords(^args1)"
           }
         ],
         "typeReturn": "any",
         "variables": [
           {
             "name": "args1",
-            "type": "MyMicroservice.ArgsListUsers"
+            "type": "MyMicroservice.ArgsListAuditRecords"
           }
         ]
       },
@@ -96,23 +106,17 @@
           },
           {
             "align": "left",
-            "bindText": "displayName",
-            "header": "Display Name",
-            "size": 1
-          },
-          {
-            "align": "left",
-            "bindText": "emails",
-            "header": "Emails",
+            "bindText": "operationDetails",
+            "header": "Operation Details",
             "size": 1
           }
         ],
         "name": "grid1",
-        "pageSize": null,
-        "typeName": "MyMicroservice.User",
+        "pageSize": 20,
+        "typeName": "MyMicroservice.AuditRecord",
         "widget": "Grid",
         "withFiltering": true,
-        "withPaging": false
+        "withPaging": true
       }
     ],
     "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-main",

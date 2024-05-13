@@ -1,0 +1,80 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListAuditRecords"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(MyDataBase.TblAuditRecords, This(), [RdsConditional(id == ^args.id, !IsNull(^args.id)), RdsConditional(executionDate >= ^args.fromExecutionDate, !IsNull(^args.fromExecutionDate)), RdsConditional(executionDate <= ^args.toExecutionDate, !IsNull(^args.toExecutionDate)), RdsConditional(operationType == ^args.operationType, !IsNull(^args.operationType)), RdsConditional(requester == ^args.requester, !IsNull(^args.requester)), RdsConditional(resourceId == ^args.resourceId, !IsNull(^args.resourceId)), RdsConditional(resourceType == ^args.resourceType, !IsNull(^args.resourceType))], id, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(AuditRecord)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.id",
+        "in": "Query",
+        "name": "id",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.fromExecutionDate",
+        "in": "Query",
+        "name": "fromExecutionDate",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.toExecutionDate",
+        "in": "Query",
+        "name": "toExecutionDate",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.operationType",
+        "in": "Query",
+        "name": "operationType",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.requester",
+        "in": "Query",
+        "name": "requester",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.resourceId",
+        "in": "Query",
+        "name": "resourceId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.resourceType",
+        "in": "Query",
+        "name": "resourceType",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/audit-records",
+    "remarks": "Allows to get a list of AuditRecords.",
+    "responses": []
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "autoincrementalPrimaryKey": false,
+  "columns": [
+    {
+      "alias": "id",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "VARCHAR(255)",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "ID",
+      "primaryKey": true,
+      "type": "string"
+    },
+    {
+      "alias": "executionDate",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "TIMESTAMP WITH TIME ZONE",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "EXECUTION_DATE",
+      "primaryKey": false,
+      "type": "datetime"
+    },
+    {
+      "alias": "operationDetails",
+      "allowNull": true,
+      "dbTypes": [
+        {
+          "dbType": "VARCHAR(4000)",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "OPERATION_DETAILS",
+      "primaryKey": false,
+      "type": "string"
+    },
+    {
+      "alias": "operationType",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "SMALLINT",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "OPERATION_TYPE",
+      "primaryKey": false,
+      "type": "integer"
+    },
+    {
+      "alias": "requester",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "VARCHAR(255)",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "REQUESTER",
+      "primaryKey": false,
+      "type": "string"
+    },
+    {
+      "alias": "resourceId",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "VARCHAR(255)",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "RESOURCE_ID",
+      "primaryKey": false,
+      "type": "string"
+    },
+    {
+      "alias": "resourceType",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "VARCHAR(255)",
+          "providerName": "Postgres"
+        }
+      ],
+      "name": "RESOURCE_TYPE",
+      "primaryKey": false,
+      "type": "string"
+    }
+  ],
+  "foreignKeys": [],
+  "indexes": [
+    {
+      "columnsNames": [
+        "EXECUTION_DATE"
+      ],
+      "name": "IDX9NI6XU5L5NCNDJXI7CKA6NVSL",
+      "tablespace": null
+    },
+    {
+      "columnsNames": [
+        "OPERATION_TYPE"
+      ],
+      "name": "IDXFNEI98XW9FR2O6X16LG5NY43X",
+      "tablespace": null
+    },
+    {
+      "columnsNames": [
+        "RESOURCE_ID"
+      ],
+      "name": "IDXFPF4GHBMSQKUN5U3O32GUYJT5",
+      "tablespace": null
+    },
+    {
+      "columnsNames": [
+        "REQUESTER"
+      ],
+      "name": "IDXHQL4YSW03WPGY5220DNAS58R0",
+      "tablespace": null
+    },
+    {
+      "columnsNames": [
+        "RESOURCE_TYPE"
+      ],
+      "name": "IDXPO1GDJ6FNPNXU7C515EE0SB5Y",
+      "tablespace": null
+    }
+  ],
+  "isView": false,
+  "partition": {
+    "column": null,
+    "partitionType": null
+  },
+  "primaryKeyName": "TBL_AUDIT_RECORDS_PKEY",
+  "sequenceName": "",
+  "tableName": "TBL_AUDIT_RECORDS",
+  "tablespace": null,
+  "uniqueKeys": []
+}

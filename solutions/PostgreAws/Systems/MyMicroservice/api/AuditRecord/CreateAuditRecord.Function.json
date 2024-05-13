@@ -2,14 +2,14 @@
   "algorithm": {
     "parameters": [
       {
-        "name": "user",
-        "type": "User"
+        "name": "auditRecord",
+        "type": "AuditRecord"
       }
     ],
     "statements": [
       {
         "command": "Return",
-        "expression": "RdsInsert(MyDataBase.TblUsers, ^user)"
+        "expression": "RdsInsert(MyDataBase.TblAuditRecords, ^auditRecord)"
       }
     ],
     "typeReturn": "any",
@@ -19,14 +19,14 @@
     "method": "POST",
     "parameters": [
       {
-        "bind": "user",
+        "bind": "auditRecord",
         "in": "Body",
         "name": "body",
-        "remarks": "User to be created."
+        "remarks": "AuditRecord to be created."
       }
     ],
-    "path": "/user",
-    "remarks": "Allows to create a new User.",
+    "path": "/audit-record",
+    "remarks": "Allows to create a new AuditRecord.",
     "responses": []
   }
 }

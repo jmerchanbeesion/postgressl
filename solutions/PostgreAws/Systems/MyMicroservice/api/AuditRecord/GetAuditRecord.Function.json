@@ -9,10 +9,10 @@
     "statements": [
       {
         "command": "Return",
-        "expression": "RdsSelectOne(MyDataBase.TblUsers, This(), id == ^id)"
+        "expression": "RdsSelectOne(MyDataBase.TblAuditRecords, This(), id == ^id)"
       }
     ],
-    "typeReturn": "User",
+    "typeReturn": "AuditRecord",
     "variables": []
   },
   "routing": {
@@ -25,8 +25,8 @@
         "remarks": "Id."
       }
     ],
-    "path": "/user/{id}",
-    "remarks": "Allows to get a User.",
+    "path": "/audit-record/{id}",
+    "remarks": "Allows to get a AuditRecord.",
     "responses": []
   }
 }

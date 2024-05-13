@@ -6,14 +6,14 @@
         "type": "string"
       },
       {
-        "name": "user",
-        "type": "User"
+        "name": "auditRecord",
+        "type": "AuditRecord"
       }
     ],
     "statements": [
       {
         "command": "Return",
-        "expression": "RdsUpdate(MyDataBase.TblUsers, ^user, id == ^id)"
+        "expression": "RdsUpdate(MyDataBase.TblAuditRecords, ^auditRecord, id == ^id)"
       }
     ],
     "typeReturn": "any",
@@ -29,14 +29,14 @@
         "remarks": "Id."
       },
       {
-        "bind": "user",
+        "bind": "auditRecord",
         "in": "Body",
         "name": "body",
-        "remarks": "New User information to be updated."
+        "remarks": "New AuditRecord information to be updated."
       }
     ],
-    "path": "/user/{id}",
-    "remarks": "Allows to update an existing User.",
+    "path": "/audit-record/{id}",
+    "remarks": "Allows to update an existing AuditRecord.",
     "responses": []
   }
 }
