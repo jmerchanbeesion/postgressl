@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "blazedpath": {
-    "version": "3.26.4"
+    "version": "3.26.8"
   },
   "publishConfig": {
     "registry": "https://blz-nexus.beesion.team/repository/bee-npm",
